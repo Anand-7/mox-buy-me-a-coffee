@@ -1,0 +1,76 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.2, pytest-8.4.0, pluggy-1.6.0
+rootdir: /Users/anandraj/vyper-course/mox-buy-me-a-coffee-cu
+configfile: pyproject.toml
+plugins: xdist-3.7.0, hypothesis-6.135.9, cov-6.2.1, titanoboa-0.2.7
+collected 12 items
+
+tests/unit/test_unit_coffee.py ............                              [100%]                                                                                                                                               
+                                                                                                                                               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┓
+┃ Contract                                             ┃ Computation                    ┃ Count ┃ Mean   ┃ Median ┃ Stdev  ┃ Min     ┃ Max    ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━━━┩
+│ Path: src                                            │                                │       │        │        │        │         │        │
+│ Name: buy_me_a_coffee.vy                             │                                │       │        │        │        │         │        │
+│ Address: 0x3d06E92f20305D9a2D71a1D479E9EE22690Ae7E4  │                                │       │        │        │        │         │        │
+│                                                      │ fund                           │ 21    │ 47345  │ 45022  │ 7339   │ 45022   │ 69422  │
+│                                                      │ get_eth_to_usd_rate            │ 1     │ 2955   │ 2955   │ 0      │ 2955    │ 2955   │
+│                                                      │ get_contract_balance           │ 1     │ 64     │ 64     │ 0      │ 64      │ 64     │
+│                                                      │ <none>                         │ 52    │ 3      │ 3      │ 2      │ 3       │ 21     │
+│                                                      │ withdraw                       │ 3     │ -88594 │ -29833 │ 101777 │ -206116 │ -29833 │
+├──────────────────────────────────────────────────────┼────────────────────────────────┼───────┼────────┼────────┼────────┼─────────┼────────┤
+│ Path: src/mocks                                      │                                │       │        │        │        │         │        │
+│ Name: mock_aggregatorV3.vy                           │                                │       │        │        │        │         │        │
+│ Address: 0xC6Acb7D16D51f72eAA659668F30A40d87E2E0551  │                                │       │        │        │        │         │        │
+│                                                      │ <none>                         │ 22    │ 3      │ 3      │ 0      │ 3       │ 3      │
+└──────────────────────────────────────────────────────┴────────────────────────────────┴───────┴────────┴────────┴────────┴─────────┴────────┘
+                                                                                                                                                                                                
+                                                                                                                                                                                                
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┓
+┃ Contract                                             ┃ Computation                                                                     ┃ Count ┃ Mean   ┃ Median ┃ Stdev  ┃ Min     ┃ Max    ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━━━┩
+│ Path: src                                            │                                                                                 │       │        │        │        │         │        │
+│ Name: buy_me_a_coffee.vy                             │                                                                                 │       │        │        │        │         │        │
+│ Address: 0x3d06E92f20305D9a2D71a1D479E9EE22690Ae7E4  │                                                                                 │ Count │ Mean   │ Median │ Stdev  │ Min     │ Max    │
+│ ---------------------------------------------------- │ --------------------------------------------------------------------------      │ ----- │ -----  │ -----  │ -----  │ -----   │ -----  │
+│ src/buy_me_a_coffee.vy:                              │  24: PRICE_FEED : public(immutable(AggregatorV3Interface)) #0x694AA1769357215D… │ 1     │ 3      │ 3      │ 0      │ 3       │ 3      │
+│ src/buy_me_a_coffee.vy:                              │  25: OWNER : public(immutable(address))                                         │ 6     │ 3      │ 3      │ 0      │ 3       │ 3      │
+│ src/buy_me_a_coffee.vy:                              │  28: funders : public(DynArray)                                                 │ 22    │ 3      │ 3      │ 0      │ 3       │ 3      │
+│ src/buy_me_a_coffee.vy:                              │  29: funders_to_amount_funded : public(HashMap)                                 │ 22    │ 3      │ 3      │ 0      │ 3       │ 3      │
+│ ---------------------------------------------------- │ --------------------------------------------------------------------------      │ ----- │ -----  │ -----  │ -----  │ -----   │ -----  │
+│ src/buy_me_a_coffee.vy:MINIMUM_USD                   │  22: MINIMUM_USD : public(constant(uint256)) = 5 * (10**18) #since we will nee… │ 1     │ 21     │ 21     │ 0      │ 21      │ 21     │
+│ ---------------------------------------------------- │ --------------------------------------------------------------------------      │ ----- │ -----  │ -----  │ -----  │ -----   │ -----  │
+│ src/buy_me_a_coffee.vy:withdraw                      │  57: send(OWNER, self.balance)                                                  │ 3     │ 9344   │ 9344   │ 0      │ 9344    │ 9344   │
+│ src/buy_me_a_coffee.vy:withdraw                      │  55: def withdraw():                                                            │ 3     │ 630    │ 198    │ 748    │ 198     │ 1494   │
+│ src/buy_me_a_coffee.vy:withdraw                      │  58: for funder: address in self.funders:                                       │ 3     │ 105    │ 105    │ 0      │ 105     │ 105    │
+│ src/buy_me_a_coffee.vy:withdraw                      │  56: assert msg.sender == OWNER, "Not the contract owner!"                      │ 3     │ 49     │ 49     │ 0      │ 49      │ 49     │
+│ src/buy_me_a_coffee.vy:withdraw                      │  59: self.funders_to_amount_funded= 0                                           │ 3     │ -78924 │ -19731 │ 102525 │ -197310 │ -19731 │
+│ src/buy_me_a_coffee.vy:withdraw                      │  60: self.funders = []                                                          │ 3     │ -19798 │ -19798 │ 0      │ -19798  │ -19798 │
+│ ---------------------------------------------------- │ --------------------------------------------------------------------------      │ ----- │ -----  │ -----  │ -----  │ -----   │ -----  │
+│ src/buy_me_a_coffee.vy:fund                          │  50: self.funders.append(msg.sender)                                            │ 21    │ 24431  │ 22346  │ 6587   │ 22346   │ 44246  │
+│ src/buy_me_a_coffee.vy:fund                          │  51: self.funders_to_amount_funded += msg.value #Since the price of ETH change… │ 21    │ 22206  │ 22206  │ 0      │ 22206   │ 22206  │
+│ src/buy_me_a_coffee.vy:fund                          │  47: usd_value_of_eth: uint256 = get_price_module._get_eth_to_usd_rate(PRICE_F… │ 21    │ 42     │ 42     │ 0      │ 42      │ 42     │
+│ src/buy_me_a_coffee.vy:fund                          │  49: assert usd_value_of_eth >= MINIMUM_USD, "You must spend more ETH!"         │ 21    │ 29     │ 29     │ 0      │ 29      │ 29     │
+│ src/buy_me_a_coffee.vy:fund                          │  39: def fund():                                                                │ 21    │ 2      │ 2      │ 0      │ 2       │ 2      │
+│ ---------------------------------------------------- │ --------------------------------------------------------------------------      │ ----- │ -----  │ -----  │ -----  │ -----   │ -----  │
+│ src/get_price_module.vy:_get_eth_to_usd_rate         │  17: price: int256 = staticcall price_feed.latestAnswer() #270784000000         │ 22    │ 530    │ 190    │ 878    │ 190     │ 2690   │
+│ src/get_price_module.vy:_get_eth_to_usd_rate         │  21: eth_amount_in_usd: uint256 = (eth_amount * convert(eth_price, uint256)) /… │ 22    │ 121    │ 121    │ 0      │ 121     │ 121    │
+│ src/get_price_module.vy:_get_eth_to_usd_rate         │  20: eth_price : int256 = price * (10 ** 10) #2707840000000000000000            │ 22    │ 58     │ 58     │ 0      │ 58      │ 58     │
+│ src/get_price_module.vy:_get_eth_to_usd_rate         │  22: return eth_amount_in_usd # Returns value with 18 decimals                  │ 22    │ 27     │ 28     │ 0      │ 25      │ 28     │
+│ ---------------------------------------------------- │ --------------------------------------------------------------------------      │ ----- │ -----  │ -----  │ -----  │ -----   │ -----  │
+│ src/buy_me_a_coffee.vy:get_contract_balance          │  71: assert msg.sender == OWNER, "Only Owner can view the balance"              │ 1     │ 41     │ 41     │ 0      │ 41      │ 41     │
+│ src/buy_me_a_coffee.vy:get_contract_balance          │  72: return self.balance                                                        │ 1     │ 20     │ 20     │ 0      │ 20      │ 20     │
+│ src/buy_me_a_coffee.vy:get_contract_balance          │  70: def get_contract_balance() -> uint256:                                     │ 1     │ 3      │ 3      │ 0      │ 3       │ 3      │
+│ ---------------------------------------------------- │ --------------------------------------------------------------------------      │ ----- │ -----  │ -----  │ -----  │ -----   │ -----  │
+│ src/buy_me_a_coffee.vy:get_eth_to_usd_rate           │  66: return get_price_module._get_eth_to_usd_rate(PRICE_FEED, eth_amount)       │ 1     │ 37     │ 37     │ 0      │ 37      │ 37     │
+│ src/buy_me_a_coffee.vy:get_eth_to_usd_rate           │  65: def get_eth_to_usd_rate(eth_amount: uint256) -> uint256:                   │ 1     │ 24     │ 24     │ 0      │ 24      │ 24     │
+├──────────────────────────────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────┼───────┼────────┼────────┼────────┼─────────┼────────┤
+│ Path: src/mocks                                      │                                                                                 │       │        │        │        │         │        │
+│ Name: mock_aggregatorV3.vy                           │                                                                                 │       │        │        │        │         │        │
+│ Address: 0xC6Acb7D16D51f72eAA659668F30A40d87E2E0551  │                                                                                 │ Count │ Mean   │ Median │ Stdev  │ Min     │ Max    │
+│ ---------------------------------------------------- │ --------------------------------------------------------------------------      │ ----- │ -----  │ -----  │ -----  │ -----   │ -----  │
+│ src/mocks/mock_aggregatorV3.vy:                      │   5: latestAnswer: public(int256)                                               │ 22    │ 3      │ 3      │ 0      │ 3       │ 3      │
+└──────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴───────┴────────┴────────┴────────┴─────────┴────────┘
+
+
+============================== 12 passed in 0.10s ==============================
